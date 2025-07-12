@@ -46,12 +46,14 @@ const UserSchema = new mongoose.Schema(
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
+        default: []
       },
     ],
     followings: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
+        default : []
       },
     ],
     post: [

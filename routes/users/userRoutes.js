@@ -10,7 +10,8 @@ const {
   updateUserCtrl,
   profilePhotoUploadCtrl,
   whoViewedMyProfileCtrl,
-  followingCtrl
+  followingCtrl,
+  unFollowCtrl
 } = require('../../controller/users/userCtrl') // it means go two directory back user -> Routes (2 Directory back)
 
 const isLogin = require('../../middlewares/isLogin')
@@ -43,6 +44,8 @@ userRouter.get('/profile-viewers/:id', isLogin,whoViewedMyProfileCtrl)
 //GET/api/v1/users/following/:id
 userRouter.get('/following/:id', isLogin,followingCtrl)
 
+//GET/api/v1/users/unfollowing/:id
+userRouter.get('/unfollowing/:id', isLogin,unFollowCtrl)
 
 //POST/api/v1/users/:id
 userRouter.post(
