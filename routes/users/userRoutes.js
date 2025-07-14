@@ -12,7 +12,8 @@ const {
   whoViewedMyProfileCtrl,
   followingCtrl,
   unFollowCtrl,
-  blockedUserCtrl
+  blockedUserCtrl,
+  unBlockedUserCtrl
 } = require('../../controller/users/userCtrl') // it means go two directory back user -> Routes (2 Directory back)
 
 const isLogin = require('../../middlewares/isLogin')
@@ -50,6 +51,9 @@ userRouter.get('/unfollowing/:id', isLogin,unFollowCtrl)
 
 //Post/api/v1/users/block/:id
 userRouter.get('/block/:id', isLogin,blockedUserCtrl)
+
+//Post/api/v1/users/unblock/:id
+userRouter.get('/unblock/:id', isLogin,unBlockedUserCtrl)
 
 //POST/api/v1/users/:id
 userRouter.post(
